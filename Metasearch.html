@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaSearch - Multi-Engine Search</title>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5a623;
+            --background-color: #f4f7f9;
+            --text-color: #333;
+            --light-text-color: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        main {
+            padding-top: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        #search-input {
+            width: 60%;
+            max-width: 600px;
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px 0 0 30px;
+            outline: none;
+        }
+
+        #search-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-button:hover {
+            background-color: #3a7bc8;
+        }
+
+        .engine-buttons {
+            margin-top: 1rem;
+        }
+
+        .engine-buttons button {
+            padding: 0.5rem 1rem;
+            margin: 0.3rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .google { background-color: #4285F4; color: #fff; }
+        .bing { background-color: #008373; color: #fff; }
+        .yahoo { background-color: #6001D2; color: #fff; }
+        .duckduckgo { background-color: #DE5833; color: #fff; }
+        .firefox { background-color: #FF7139; color: #fff; }
+        .edge { background-color: #0078D7; color: #fff; }
+        .chrome { background-color: #F4B400; color: #fff; }
+
+        .engine-buttons button:hover {
+            opacity: 0.8;
+        }
+
+        .social-features {
+            margin-top: 2rem;
+        }
+
+        .social-features a {
+            display: inline-block;
+            padding: 1rem;
+            margin: 0.5rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .instagram { background-color: #E4405F; }
+        .facebook { background-color: #1877F2; }
+        .youtube { background-color: #FF0000; }
+        .tiktok { background-color: #000; }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MetaSearch</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Search with Your Preferred Engine</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Enter search term...">
+                <button id="search-button">🔍</button>
+            </div>
+            <div class="engine-buttons">
+                <button class="google" onclick="searchEngine('google')">Google</button>
+                <button class="bing" onclick="searchEngine('bing')">Bing</button>
+                <button class="yahoo" onclick="searchEngine('yahoo')">Yahoo</button>
+                <button class="duckduckgo" onclick="searchEngine('duckduckgo')">DuckDuckGo</button>
+                <button class="firefox" onclick="searchEngine('firefox')">Start page</button>
+                <button class="edge" onclick="searchEngine('edge')">Edge</button>
+                <button class="chrome" onclick="searchEngine('chrome')">Chrome</button>
+            </div>
+        </section>
+       <br>
+       <br>
+       <br>
+       <br>
+        <section class="social-features">
+            <a href="https://www.instagram.com" class="instagram">Instagram</a>
+            <a href="https://www.facebook.com" class="facebook">Facebook</a>
+            <a href="https://www.youtube.com" class="youtube">YouTube</a>
+            <a href="https://www.tiktok.com" class="tiktok">TikTok</a>
+        </section>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <footer>
+        </div>
+        <p>&copy; 2025 MetaSearch. All rights reserved.</p>
+    </footer>
+
+
+    </main>
+
+    <script>
+        function searchEngine(engine) {
+            let query = document.getElementById("search-input").value;
+            if (!query.trim()) return;
+            let urls = {
+                google: "https://www.google.com/search?q=",
+                bing: "https://www.bing.com/search?q=",
+                yahoo: "https://search.yahoo.com/search?p=",
+                duckduckgo: "https://duckduckgo.com/?q=",
+                firefox: "https://www.startpage.com/do/search?q=",
+                edge: "https://www.msn.com/en-us/search?q=",
+                chrome: "https://www.google.com/search?q="
+            };
+            window.open(urls[engine] + encodeURIComponent(query), "_blank");
+        }
+    </script>
+</body>
+</html>
